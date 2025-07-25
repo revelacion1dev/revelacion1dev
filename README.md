@@ -1,4 +1,3 @@
-# 👋 Hi there, I'm Ruben Francisco Artero Bañares!
 
 ## 🚀 About Me
 Software Engineer graduate from the **University of Almería**, passionate about the intersection of technology and innovation. I'm deeply interested in **information theory**, **data science**, and **artificial intelligence**, with a particular focus on **Reinforcement Learning** and **Android development**.

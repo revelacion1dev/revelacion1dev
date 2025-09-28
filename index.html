@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubén Francisco Artero Bañares - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 0;
+            position: relative;
+        }
+
+        .profile-section {
+            padding: 40px 30px;
+            text-align: center;
+            background-color: #34495e;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            background: linear-gradient(45deg, #a8d5ba, #7fb069);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1rem;
+            color: #a8d5ba;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-content {
+            padding: 30px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-section h3 {
+            color: #a8d5ba;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li::before {
+            content: '▶';
+            color: #a8d5ba;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: '●';
+            color: #a8d5ba;
+            position: absolute;
+            left: 0;
+        }
+
+        .languages {
+            font-size: 0.9rem;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .language-level {
+            color: #a8d5ba;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: white;
+            padding: 50px 60px;
+        }
+
+        .header-main {
+            border-bottom: 3px solid #a8d5ba;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .main-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-size: 1.2rem;
+            color: #7fb069;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #a8d5ba;
+            padding-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .experience-item {
+            background-color: #f8f9fa;
+            border-left: 4px solid #a8d5ba;
+            padding: 25px;
+            border-radius: 0 5px 5px 0;
+            margin-bottom: 25px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .experience-date {
+            color: #7fb069;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .experience-company {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .specializations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .specialization-item {
+            background-color: #f8f9fa;
+            border-left: 4px solid #a8d5ba;
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .specialization-item h4 {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .specialization-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .tech-category {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 5px;
+            border-top: 4px solid #a8d5ba;
+        }
+
+        .tech-category h4 {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background-color: #2c3e50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 30px;
+            border-top: 4px solid #7fb069;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .project-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-features li {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-features li::before {
+            content: '▸';
+            color: #7fb069;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .education-item {
+            background-color: #f8f9fa;
+            border-left: 4px solid #7fb069;
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
+            margin-bottom: 20px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .education-degree {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .education-date {
+            color: #7fb069;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .education-school {
+            color: #666;
+            font-style: italic;
+        }
+
+        .social-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .social-link:hover {
+            background-color: #a8d5ba;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quote {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: #a8d5ba;
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-family: serif;
+        }
+
+        .quote::after {
+            content: '"';
+            font-size: 4rem;
+            color: #a8d5ba;
+            position: absolute;
+            bottom: -30px;
+            right: 30px;
+            font-family: serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 300px 1fr;
+            }
+            
+            .main-content {
+                padding: 40px 40px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .main-name {
+                font-size: 2rem;
+            }
+            
+            .specializations-grid,
+            .tech-categories,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header,
+            .education-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-img">RF</div>
+                <div class="name">Rubén Francisco<br>Artero Bañares</div>
+                <div class="title">Software Engineer</div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>ruben.art.dev@gmail.com</li>
+                        <li>+34 656 68 44 03</li>
+                        <li>Roquetas de Mar, Andalusia</li>
+                        <li>Spain</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Core Skills</h3>
+                    <ul class="skills-list">
+                        <li>NLP & Deep Learning</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>Cryptography</li>
+                        <li>Mobile Development</li>
+                        <li>SQL/NoSQL</li>
+                        <li>ETL Processes</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li>Critical Thinking</li>
+                        <li>Learning Capacity</li>
+                        <li>Communication</li>
+                        <li>Creative Thinking</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Languages</h3>
+                    <div class="languages">
+                        <div class="language-item">
+                            <span>Spanish</span>
+                            <span class="language-level">Native</span>
+                        </div>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span class="language-level">B2</span>
+                        </div>
+                        <div class="language-item">
+                            <span>Korean</span>
+                            <span class="language-level">Beginner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header-main">
+                <h1 class="main-name">Rubén Francisco Artero Bañares</h1>
+                <p class="main-title">Software Engineer & AI Researcher</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    Passionate software developer with experience in <strong>NLP</strong>, <strong>Deep Learning</strong>, and <strong>Google Cloud Platform</strong>, as well as skills in <strong>Docker</strong>, <strong>cryptography</strong>, <strong>SQL/NoSQL</strong>, and <strong>ETL processes</strong>. With a strong background in reinforcement learning, I have collaborated in international environments during my stay at a Korean university.
+                </p>
+                <p class="about-text" style="margin-top: 20px;">
+                    Additionally, I develop mobile applications as a hobby, exploring the intersection between UX and technology. I am seeking new opportunities to apply my knowledge in dynamic and innovative environments.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-degree">Bachelor's Degree in Computer Engineering</div>
+                        <div class="education-date">2020-2025</div>
+                    </div>
+                    <div class="education-school">University of Almería</div>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 8px;">Specialization in Information Technologies</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="education-degree">Erasmus Exchange Program</div>
+                        <div class="education-date">2022-2023</div>
+                    </div>
+                    <div class="education-school">Kyungpook National University, South Korea</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">Software Developer Internship</div>
+                        <div class="experience-date">November 2024 - January 2025</div>
+                    </div>
+                    <div class="experience-company">Michelin Experience Center, Almería</div>
+                    <p class="project-description">
+                        Development of a Code Generator for Rolling Tests using RAG (Retrieval-Augmented Generation):
+                    </p>
+                    <ul class="project-features">
+                        <li>Development of a tool based on RAG for automatic generation of rolling test code</li>
+                        <li>Used Python with NumPy and Transformers libraries for model implementation</li>
+                        <li>Implemented Plotly for data visualization and Pandas for managing build attributes</li>
+                        <li>Configured Ollama in Docker for running models locally with REST API communication</li>
+                        <li>Developed VSCode extension using TypeScript and VSCode API</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Technical Stack</h2>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h4>Programming Languages</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>AI/ML Frameworks</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Database Technologies</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Supabase</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Mobile Development</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">ROOM</span>
+                            <span class="tech-tag">Dagger Hilt</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Cloud & DevOps</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Google Cloud</span>
+                            <span class="tech-tag">GitHub</span>
+                            <span class="tech-tag">Ollama</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Data & Visualization</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">VSCode API</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">🖥️ Image Processing</h3>
+                        <p class="project-description">
+                            Implementation of the Canny algorithm in C++ for edge detection. This algorithm consists of several phases, all of which were implemented from scratch.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">🔐 Cryptography Projects</h3>
+                        <p class="project-description">
+                            Multiple cryptography implementations including:
+                        </p>
+                        <ul class="project-features">
+                            <li><strong>Desktop Application:</strong> Python app with Tkinter for document signing and encryption using AES256 and MCEliece</li>
+                            <li><strong>Mobile Library:</strong> NIST FIPS205 post-quantum signature standard implementation with Kotlin interfaces and C++ core via JNI</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">🤖 Machine Learning</h3>
+                        <p class="project-description">
+                            Diverse ML projects spanning multiple domains:
+                        </p>
+                        <ul class="project-features">
+                            <li><strong>Kaggle Competitions:</strong> Stock market prediction using regression models, ensemble learning, CNNs, and multimodal architectures</li>
+                            <li><strong>Reinforcement Learning:</strong> PPO algorithm implementation for lunar landing simulation</li>
+                            <li><strong>Recommendation System:</strong> JavaScript-based system using Supabase Functions and small language models</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-title">🌐 Networking</h3>
+                        <p class="project-description">
+                            CCNA Introduction to Networks certification with practical experience in:
+                        </p>
+                        <ul class="project-features">
+                            <li>Cisco Packet Tracer labs</li>
+                            <li>VLAN configuration</li>
+                            <li>Implementation of diverse network protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Connect with Me</h2>
+                <div class="social-section">
+                    <div class="social-links">
+                        <a href="https://huggingface.co/revelacion1" class="social-link" target="_blank">🤗 Hugging Face</a>
+                        <a href="https://www.kaggle.com/revelacion1" class="social-link" target="_blank">📊 Kaggle</a>
+                        <a href="https://linkedin.com/in/-ruben" class="social-link" target="_blank">💼 LinkedIn</a>
+                        <a href="https://github.com/revelacion1dev" class="social-link" target="_blank">💻 GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="quote">
+                Bridging the gap between theoretical computer science and practical applications
+            </div>
+        </main>
+    </div>
+</body>
+</html>
